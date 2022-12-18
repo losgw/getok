@@ -9,7 +9,6 @@ command=$(tail $CIRRUS_WORKING_DIR/build.sh -n +$(expr $(grep '# build rom' $CIR
 
 cd $WORKDIR/rom/$name_rom
 
-export ALLOW_MISSING_DEPENDENCIES=true
 export PATH="/usr/lib/ccache:$PATH"
 export CCACHE_DIR=$WORKDIR/ccache
 export CCACHE_EXEC=$(which ccache)
