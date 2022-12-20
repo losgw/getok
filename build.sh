@@ -1,6 +1,6 @@
 #sync roms
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-xdcaf .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
