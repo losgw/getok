@@ -24,9 +24,9 @@ function enviroment() {
 function upload_rom() {
 pesan Mengunggah ROM...
 
-cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
-
 nama_file=$(basename out/target/product/$perangkat/*.zip)
+
+cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
 curl -T $nama_file oshi.at; echo
 
