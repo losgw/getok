@@ -26,6 +26,8 @@ pesan Mengunggah ROM...
 
 cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
+nama_file=$(basename out/target/product/$perangkat/*.zip)
+
 curl -T $nama_file oshi.at; echo
 
 tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
