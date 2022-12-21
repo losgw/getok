@@ -24,13 +24,14 @@ function enviroment() {
 function upload_rom() {
 pesan Mengunggah ROM...
 
+cd $WORKDIR/rom/$nama_rom
+
 nama_file=$(basename out/target/product/$perangkat/*.zip)
+tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
 
 cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
 curl -T $nama_file oshi.at; echo
-
-tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
 
 echo -e \
 "
