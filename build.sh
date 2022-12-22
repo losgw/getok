@@ -1,5 +1,5 @@
 #sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -12,7 +12,6 @@ export TZ=Asia/Jakarta
 export KBUILD_BUILD_USER=Honoka
 export KBUILD_BUILD_HOST=Cloud
 export BUILD_USERNAME=Honoka
-export BUILD_HOSTNAME=Cloud
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
