@@ -13,12 +13,12 @@ export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
 export KBUILD_BUILD_HOST=$KBUILD_BUILD_HOST
 export BUILD_USERNAME=$KBUILD_BUILD_USER
 export BUILD_HOSTNAME=$KBUILD_BUILD_HOST
-lunch lineage_X00TD-userdebug
+lunch xdroid_X00TD-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-mka bacon -j8  > reading
+make xd -j8  > reading
 
 retVal=$?
 timeEnd
