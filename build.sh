@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-12/manifest.
 git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom modol
+# build roms
 source $CIRRUS_WORKING_DIR/script/config
 timeStart
 
