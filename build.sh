@@ -1,6 +1,6 @@
 #sync rom well pikun
-repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-12/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-derp .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
@@ -20,12 +20,12 @@ export BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export BROKEN_ENFORCE_SYSPROP_OWNER=true
 export BROKEN_MISSING_REQUIRED_MODULES=true
 export BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-lunch derp_tissot-userdebug
+lunch xdroid_tissot-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-mka derp -j8  > reading
+make xd -j8  > reading
 
 retVal=$?
 timeEnd
