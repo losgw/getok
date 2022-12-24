@@ -18,6 +18,7 @@ export BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export BROKEN_ENFORCE_SYSPROP_OWNER=true
 export BROKEN_MISSING_REQUIRED_MODULES=true
 export BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+export WITH_GMS=false
 lunch derp_tissot-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
