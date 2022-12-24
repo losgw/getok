@@ -15,6 +15,7 @@ env:
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
+  skip: $CIRRUS_BRANCH == 'master'
   only_if: $CIRRUS_REPO_OWNER == 'losgw'
   timeout_in: 240m
   container:
