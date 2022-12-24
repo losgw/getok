@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#RAJA MODOL
+#DUH AJG
 
 set -e
 
