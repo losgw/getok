@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#RAJA MODOL
+#RAJA MODOLL
 
 set -e
 
