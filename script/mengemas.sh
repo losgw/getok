@@ -31,7 +31,7 @@ tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
 
 cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
-curl --upload-file $nama_file https://transfer.sh/$nama_file; echo
+curl -T $nama_file oshi.at; echo
 
 echo -e \
 "
