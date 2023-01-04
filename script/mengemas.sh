@@ -31,12 +31,7 @@ tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
 
 cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
-curl --progress-bar -F document=@"$nama_file" "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
-        -F chat_id="$TG_CHAT_ID"  \
-        -F "disable_web_page_preview=true" \
-        -F "parse_mode=html" \
-        -F caption="✅<b>Build Done</b>
-        - <code>$((DIFF / 60)) minute(s) $((DIFF % 60)) second(s) </code>
+curl -T $nama_file oshi.at; echo
 
 echo -e \
 "
