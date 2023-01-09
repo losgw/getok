@@ -1,6 +1,6 @@
 #sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/aslenofarid/local_manifest --depth 1 -b xdroid .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/aslenofarid/local_manifest --depth 1 -b lineage-19.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
@@ -13,12 +13,12 @@ export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
 export KBUILD_BUILD_HOST=$KBUILD_BUILD_HOST
 export BUILD_USERNAME=$KBUILD_BUILD_USER
 export BUILD_HOSTNAME=$KBUILD_BUILD_HOST
-lunch xdroid_X00TD-userdebug
+lunch lineage_X00TD-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-make xd -j8  > reading
+make bacon -j8  > reading
 
 retVal=$?
 timeEnd
