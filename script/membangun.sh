@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #DUH AJG
-#SEK
+#SE
 
 set -e
 
