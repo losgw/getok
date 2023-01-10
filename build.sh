@@ -18,7 +18,7 @@ mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-make bacon -j8  > reading
+mka bacon -j8  > reading
 
 retVal=$?
 timeEnd
