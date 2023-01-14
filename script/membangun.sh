@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#DUH capek
+#DUH cape
 
 set -e
 
