@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#DUH AJGS
+#DUH AJG
 
 set -e
 
