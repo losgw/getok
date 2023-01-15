@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#DUH cape
+#DUH asu
 
 set -e
 
