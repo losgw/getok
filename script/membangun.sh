@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#DUH asu
 
 set -e
 
