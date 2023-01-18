@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/aslenofarid/local_manifest --depth 1 -b lineage-16.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source $CIRRUS_WORKING_DIR/script/config
 timeStart
 
