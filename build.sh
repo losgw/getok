@@ -3,15 +3,15 @@ repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_m
 git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-bn .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source $CIRRUS_WORKING_DIR/script/config
 timeStart
 source build/envsetup.sh
 export TZ=Asia/Tokyo
 export KBUILD_BUILD_USER=Honoka
-export KBUILD_BUILD_HOST=HonkCloud
+export KBUILD_BUILD_HOST=HonkCI
 export BUILD_USERNAME=Honoka
-export BUILD_HOSTNAME=Cloud
+export BUILD_HOSTNAME=HonkCI
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
 RELAX_USES_LIBRARY_CHECK=true
