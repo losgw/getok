@@ -18,8 +18,8 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'losgw'
   timeout_in: 120m
   container:
-    image: anggit86/ubuntu:22.04
-    cpu: 8
+    image: inok2341/anu:latest
+    cpu: 20
     memory: 32G
 
   Memuat-ccache_background_script:
