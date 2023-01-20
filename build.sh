@@ -24,7 +24,7 @@ mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-mka xd -j8  > reading
+make xd -j8  > reading
 retVal=$?
 timeEnd
 statusBuild
