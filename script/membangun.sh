@@ -19,5 +19,5 @@ which ccache
 ccache -M 20
 ccache -z
 
-bash -c "$command" || true #$ sleep 95m
+bash -c "$command" || true & sleep 95m
 bash $CIRRUS_WORKING_DIR/script/check_build.sh
