@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# aowkwowkwok
+# aowkwowkwowok
 set -e
 
 # Lingkungan Utama
