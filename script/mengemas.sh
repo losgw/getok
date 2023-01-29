@@ -31,7 +31,7 @@ tautan=https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
 
 cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
-curl -T $nama_file oshi.at; echo
+curl -T $nama_file temp.sh; echo
 
 rm -rf $nama_file
 
