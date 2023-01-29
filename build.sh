@@ -8,7 +8,6 @@ source $CIRRUS_WORKING_DIR/script/config
 timeStart
 
 source build/envsetup.sh
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
 export KBUILD_BUILD_HOST=$KBUILD_BUILD_HOST
