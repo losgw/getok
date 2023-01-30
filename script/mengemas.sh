@@ -33,6 +33,8 @@ cd $WORKDIR/rom/$nama_rom/out/target/product/$perangkat
 
 curl -T $nama_file temp.sh; echo
 
+rm -rf $nama_file
+
 echo -e \
 "
 <b>Building selesai...</b>
