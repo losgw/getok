@@ -1,9 +1,9 @@
-#sync roms
+#sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/VoidUI-Tiramisu/manifest -b aosp-13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/hklknz/Local-Manifests --depth 1 -b hklknz-patch-1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source $CIRRUS_WORKING_DIR/script/config
 timeStart
 source build/envsetup.sh
