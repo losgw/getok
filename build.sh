@@ -1,6 +1,6 @@
-#sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/VoidUI-Tiramisu/manifest -b aosp-13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hklknz/Local-Manifests --depth 1 -b hklknz-patch-1 .repo/local_manifests
+#sync rom welll
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/hklknz/Local-Manifests --depth 1 -b tissot-xdcaf-eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -12,12 +12,16 @@ export KBUILD_BUILD_USER=Honoka
 export KBUILD_BUILD_HOST=HonkCI
 export BUILD_USERNAME=Honoka
 export BUILD_HOSTNAME=HonkCI
-lunch aosp_tissot-userdebug
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_PREBUILT_ELF_FILES=true
+export TARGET_HAS_BROKEN_WLAN_SET_INTERFACE=true
+lunch xdroid_tissot-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
 progress &
-mka bacon -j8  > reading
+make xd -j8  > reading
 retVal=$?
 timeEnd
 statusBuild
