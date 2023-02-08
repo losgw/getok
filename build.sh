@@ -15,6 +15,7 @@ export BUILD_HOSTNAME=HonkCI
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_PREBUILT_ELF_FILES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TARGET_HAS_BROKEN_WLAN_SET_INTERFACE=true
 lunch xdroid_tissot-userdebug
 mkfifo reading
