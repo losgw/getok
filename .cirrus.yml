@@ -29,9 +29,8 @@ task:
   Repo-pribadi_script:
      - git config --global user.name "USER"
      - git config --global user.email "$EMAIL"
-     - echo "$CREDENTIALS" > credentials.txt
-     - sudo apt-get install gh -y
-     - gh auth login --with-token < credentials.txt
+     - echo "$CREDENTIALS" > token.txt
+     - gh auth login --with-token < token.txt
      - export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
      - export KBUILD_BUILD_HOST=$KBUILD_BUILD_USER
      - export BUILD_USERNAME=$KBUILD_BUILD_USER
