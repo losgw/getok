@@ -16,7 +16,7 @@ export USE_CCACHE=1
 export CCACHE_COMPRESS=true
 
 which ccache
-ccache -M 20
+ccache -M 20G
 ccache -z
 
 bash -c "$command" || true #& sleep 105m
