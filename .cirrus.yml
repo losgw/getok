@@ -14,11 +14,12 @@ env:
   CIRRUS_CLONE_DEPTH: "1"
 
 task:
-  name: "Setting Up, Syncing, Building and Uploading"
+  name: "Setting Up, Syncing"
   only_if: $CIRRUS_REPO_OWNER == 'losgw'
-  stateful: true
-  timeout_in: 120m
-  container:
+  timeout_in: 10m
+  persistent_worker:
+    isolation:
+      container:
     image: anggit86/ubuntu:22.04
     cpu: 8
     memory: 32G
@@ -40,6 +41,19 @@ task:
   Sinkronisasi_script:
      - ./script/sinkronisasi.sh
      
+task:
+  name: "Building and Uploading"
+  only_if: $CIRRUS_REPO_OWNER == 'losgw'
+  depends_on:
+    - Setting Up, Syncing
+  timeout_in: 120m
+  persistent_worker:
+    isolation:
+      container:
+    image: anggit86/ubuntu:22.04
+    cpu: 8
+    memory: 32G
+
   Build-rom_script:
      - ./script/membangun.sh
      
