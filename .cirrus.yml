@@ -30,7 +30,7 @@ task:
      - git config --global user.name "USER"
      - git config --global user.email "$EMAIL"
      - echo "$CREDENTIALS" > token.txt
-     - gh auth login -p https --with-token < token.txt
+     - gh auth login -p https --hostname "$USER" --with-token < token.txt
      - export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
      - export KBUILD_BUILD_HOST=$KBUILD_BUILD_USER
      - export BUILD_USERNAME=$KBUILD_BUILD_USER
