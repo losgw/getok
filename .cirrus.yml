@@ -14,7 +14,7 @@ env:
   CIRRUS_CLONE_DEPTH: "1"
 
 task:
-  name: "Setting Up, Syncing"
+  name: "Setting Up, Syncing, Building and Uploading"
   only_if: $CIRRUS_REPO_OWNER == 'losgw'
   timeout_in: 120m
   container:
