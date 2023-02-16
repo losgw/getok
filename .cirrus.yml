@@ -16,15 +16,15 @@ env:
 task:
   name: "Setting Up, Syncing"
   only_if: $CIRRUS_REPO_OWNER == 'losgw'
-  timeout_in: 10m
+  timeout_in: 120m
   container:
     image: anggit86/ubuntu:22.04
-    cpu: 6
-    memory: 16G
+    cpu: 8
+    memory: 32G
 
   Memuat-ccache_background_script:
      - ./script/memuat_ccache.sh
-     
+
   Repo-pribadi_script:
      - git config --global user.name "USER"
      - git config --global user.email "$EMAIL"
@@ -38,21 +38,10 @@ task:
 
   Sinkronisasi_script:
      - ./script/sinkronisasi.sh
-     
-task:
-  name: "Building and Uploading"
-  only_if: $CIRRUS_REPO_OWNER == 'losgw'
-  depends_on:
-    - Setting Up, Syncing
-  timeout_in: 120 
-  container:
-    image: anggit86/ubuntu:22.04
-    cpu: 8
-    memory: 32G
 
   Build-rom_script:
      - ./script/membangun.sh
-     
+
   Ccache-info_script:
      - set -e
      - export CCACHE_DIR=$WORKDIR/ccache
