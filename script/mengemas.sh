@@ -69,7 +69,7 @@ function upload_ccache() {
         tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
     }
     time compress ccache 1
-    rclone copy --drive-chunk-size 256M --stats 1s ccache.tar.gz getok:ccache/$perangkat/$nama_rom -P
+    rclone copy --drive-chunk-size 256M --stats 1s ccache.tar.gz los:ccache/$perangkat/$nama_rom -P
     rm -rf ccache.tar.gz
     pesan Mengunggah ccache berhasil...
 }
