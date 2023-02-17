@@ -3,6 +3,8 @@
 cd $WORKDIR
 mkdir -p ~/.config/rclone
 echo "$RCLONECONFIG_DRIVE" > ~/.config/rclone/rclone.conf
+echo "GH_TOKEN" > ~/token.txt
+gh auth login --with-token ~/token.txt
 
 # Lingkungan Utama
 name_rom=$(grep init $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d / -f 4)
