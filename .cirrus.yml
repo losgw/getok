@@ -26,7 +26,7 @@ task:
      - ./script/memuat_ccache.sh
 
   Repo-pribadi_script:
-     - export GITHUB_TOKEN=
+     - export GITHUB_TOKEN=$GH_TOKEN"
      - echo "$GH_TOKEN" > ~/.token.txt
      - gh auth login --with-token < ~/.token.txt
      - git config --global user.name "USER"
