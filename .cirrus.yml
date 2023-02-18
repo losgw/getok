@@ -26,7 +26,11 @@ task:
      - ./script/memuat_ccache.sh
 
   Repo-pribadi_script:
-     - export GITHUB_TOKEN=$GH_TOKEN
+     - git config --global --unset-all 'credential.https://github.com.helper'
+     - git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
+     - export GITHUB_TOKEN=
+     - echo "$GH_TOKEN" > ~/.token.txt
+     - gh auth login --with-token < ~/.token.txt
      - git config --global user.name "USER"
      - git config --global user.email "$EMAIL"
      - export KBUILD_BUILD_USER=$KBUILD_BUILD_USER
