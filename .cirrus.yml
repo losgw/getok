@@ -26,6 +26,8 @@ task:
      - ./script/memuat_ccache.sh
 
   Repo-pribadi_script:
+     - git config --global 'credential.https://github.com.helper' ''
+     - git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
      - export GITHUB_TOKEN=
      - echo "$GH_TOKEN" > ~/.token.txt
      - gh auth login --with-token < ~/.token.txt
