@@ -12,7 +12,7 @@ export KBUILD_BUILD_USER=Honoka
 export KBUILD_BUILD_HOST=HonkCI
 export BUILD_USERNAME=Honoka
 export BUILD_HOSTNAME=HonkCI
-lunch tissot_mido-userdebug
+lunch banana_tissot-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
 build_message "Building Started"
