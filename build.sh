@@ -8,10 +8,10 @@ source $CIRRUS_WORKING_DIR/script/config
 timeStart
 source build/envsetup.sh
 export TZ=Asia/Tokyo
-export KBUILD_BUILD_USER=Honoka
-export KBUILD_BUILD_HOST=HonkCI
-export BUILD_USERNAME=Honoka
-export BUILD_HOSTNAME=HonkCI
+export KBUILD_BUILD_USER=hklknz
+export KBUILD_BUILD_HOST=Roselia-CI
+export BUILD_USERNAME=hklknz
+export BUILD_HOSTNAME=Roselia-CI
 lunch banana_tissot-userdebug
 mkfifo reading
 tee "${BUILDLOG}" < reading &
